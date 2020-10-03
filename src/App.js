@@ -1,7 +1,7 @@
 import React from 'react';
 import PlayerContext from './stores/PlayerContext';
 import Player from './components/Player';
-import getPlayer from './functions/functions';
+import getPlayer from './functions/player-functions';
 import './App.css';
 
 function App() {

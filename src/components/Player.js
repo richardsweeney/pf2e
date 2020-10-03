@@ -42,7 +42,7 @@ function Player () {
 
   return (
     <div className="player">
-      <div className="flex p-4 rounded-t bg-orange-600 text-white shadow-inner" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="flex p-4 rounded-t bg-gray-700 text-white shadow-inner" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 className="text-4xl">{player.name}</h2>
         <img className="h-20 w-20 rounded-full object-fill" src={player.image} alt={player.name}/>
       </div>
