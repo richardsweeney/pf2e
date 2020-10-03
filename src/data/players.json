@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "image": "https://cdnb.artstation.com/p/assets/images/images/018/947/663/large/jake-siano-elrisfinal.jpg?1561380156",
+      "name": "Lorem Id",
+      "class": "Sorcerer",
+      "heritage": "Human, Half-elf",
+      "level": 4,
+      "HP": 6,
+      "proficiencyBonus": 3,
+      "modifier": "charisma",
+      "magicTradition": "Arcane",
+      "speed": 25,
+      "XP": 210,
+      "languages": [
+        "Common",
+        "Elven"
+      ],
+      "abilityScores": {
+        "modifiers": {
+          "strength": 0,
+          "dexterity": 1,
+          "constitution": 2,
+          "intelligence": 1,
+          "wisdom": 1,
+          "charisma": 4
+        },
+        "scores": {
+          "strength": 10,
+          "dexterity": 12,
+          "constitution": 14,
+          "intelligence": 12,
+          "wisdom": 12,
+          "charisma": 18
+        }
+      },
+      "armourClass": {
+        "unarmed": "T",
+        "light": null,
+        "medium": null,
+        "heavy": null
+      },
+      "savingThrows": {
+        "fortitude": "T",
+        "reflex": "T",
+        "will": "E"
+      },
+      "spellAttackRoll": "T",
+      "spellDC": "T",
+      "cantrips": [
+        1, 2, 3
+      ],
+      "spells": [
+        1, 2, 3
+      ],
+      "skills": {
+        "2": "T",
+        "5": "T",
+        "6": "E",
+        "8": "T",
+        "10": "T",
+        "13": "T",
+        "15": "T"
+      }
+    }
+  ]
+}

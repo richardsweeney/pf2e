@@ -1,0 +1,34 @@
+{
+  "data" : [
+    {
+      "id": 1,
+      "name": "Detect magic",
+      "range": 30,
+      "level": 1,
+      "moves": 2,
+      "targets": null,
+      "prepared": false,
+      "notes": "You send out a pulse that registers the presence of magic. You receive no information beyond the presence or absence of magic. You can choose to ignore magic you're fully aware of, such as the magic items and ongoing spells of you and your allies. You detect illusion magic only if that magic's effect has a lower level than the level of your detect magic spell. However, items that have an illusion aura but aren't deceptive in appearance (such as an invisibility potion) typically are detected normally."
+    },
+    {
+      "id": 2,
+      "name": "Shield",
+      "range": null,
+      "level": 1,
+      "moves": 1,
+      "targets": null,
+      "prepared": false,
+      "notes": "You raise a magical shield of force. This counts as using the Raise a Shield action, giving you a +1 circumstance bonus to AC until the start of your next turn, but it doesn't require a hand to use. While the spell is in effect, you can use the Shield Block reaction with your magic shield. The shield has Hardness 5. After you use Shield Block, the spell ends and you can't cast it again for 10 minutes. Unlike a normal Shield Block, you can use the spell's reaction against the magic missile spell."
+    },
+    {
+      "id": 3,
+      "name": "Light",
+      "range": 30,
+      "level": 1,
+      "moves": 2,
+      "targets": 1,
+      "prepared": false,
+      "notes": "The object glows, casting bright light in a 20-foot radius (and dim light for the next 20 feet) like a torch. If you cast this spell again on a second object, the light spell on the first object ends."
+    }
+  ]
+}

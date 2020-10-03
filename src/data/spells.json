@@ -1,0 +1,34 @@
+{
+  "data" : [
+    {
+      "id": 1,
+      "name": "Magic missile",
+      "range": 120,
+      "level": 1,
+      "moves": 2,
+      "targets": 1,
+      "prepared": false,
+      "notes": "You send a dart of force streaking toward a creature that you can see. It automatically hits and deals 1d4+1 force damage. For each additional action you use when Casting the Spell, increase the number of missiles you shoot by one, to a maximum of three missiles for 3 actions. You choose the target for each missile individually. If you shoot more than one missile at the same target, combine the damage before applying bonuses or penalties to damage, resistances, weaknesses, and so forth."
+    },
+    {
+      "id": 2,
+      "name": "Gust of wind",
+      "range": 60,
+      "level": 1,
+      "moves": 2,
+      "targets": null,
+      "prepared": false,
+      "notes": "A violent wind issues forth from your palm, blowing from the point where you are when you cast the spell to the line's opposite end. The wind extinguishes small non-magical fires, disperses fog and mist, blows objects of light Bulk or less around, and pushes larger objects. Large or smaller creatures in the area must attempt a Fortitude save. Large or smaller creatures that later move into the gust must attempt the save on entering. Critical Success The creature is unaffected. Success The creature can't move against the wind. Failure The creature is knocked prone. If it was flying, it suffers the effects of critical failure instead. Critical Failure The creature is pushed 30 feet in the wind's direction, knocked prone, and takes 2d6 bludgeoning damage."
+    },
+    {
+      "id": 3,
+      "name": "Acid arrow",
+      "range": 120,
+      "level": 1,
+      "moves": 2,
+      "targets": 1,
+      "prepared": false,
+      "notes": "You conjure an arrow of acid that continues corroding the target after it hits. Make a spell attack against the target. On a hit, you deal 3d8 acid damage plus 1d6 persistent acid damage. On a critical hit, double the initial damage, but not the persistent damage."
+    }
+  ]
+}

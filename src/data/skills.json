@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Acrobatics",
+      "modifier": "dexterity"
+    },
+    {
+      "id": 2,
+      "name": "Arcana",
+      "modifier": "intelligence"
+    },
+    {
+      "id": 5,
+      "name": "Deception",
+      "modifier": "charisma"
+    },
+    {
+      "id": 6,
+      "name": "Diplomacy",
+      "modifier": "charisma"
+    },
+    {
+      "id": 8,
+      "name": "Lore",
+      "modifier": "intelligence"
+    },
+    {
+      "id": 10,
+      "name": "Medicine",
+      "modifier": "wisdom"
+    },
+    {
+      "id": 13,
+      "name": "Performance",
+      "modifier": "charisma"
+    },
+    {
+      "id": 15,
+      "name": "Society",
+      "modifier": "intelligence"
+    }
+  ]
+}

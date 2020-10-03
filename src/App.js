@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import PlayerContext from './stores/PlayerContext';
+import Player from './components/Player';
+import getPlayer from './functions/functions';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PlayerContext.Provider value={getPlayer(1)}>
+      <div className="max-w-screen-md bg-white rounded shadow-xl mx-auto container">
+        <Player />
+      </div>
+    </PlayerContext.Provider>
   );
 }
 
