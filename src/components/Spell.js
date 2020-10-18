@@ -1,29 +1,52 @@
-import React from 'react';
-import useCastsSpell from '../hooks/useCastsSpell';
-import Property from './Property';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import SpellModal from './SpellModal';
+import Dice from './Dice';
+
+const modalStyles = {
+  overlay: {
+    background: 'rgba(0, 0, 0, .7)'
+  },
+  content: {
+    margin: '0 auto',
+    maxWidth: '580px',
+    left: 0,
+    right: 0,
+    border: 0,
+    borderRadius: '5px',
+    padding: '24px',
+    boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+  }
+};
 
 function Spell ({ spell }) {
-  const { castSpells, cast } = useCastsSpell();
-  const castSpell = castSpells.find(({ id }) => id === spell.id);
-  const properties = {
-    'Moves': spell.moves,
-    'Level': spell.level,
-    'Range': `${spell.range} ft.`,
-    'Targets': (spell.targets) ? `${spell.targets} creatures` : 'n/a',
-    'Prepared': (spell.prepared) ? 'Yes' : 'No'
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-1/2 mb-8">
-      <h4 className="font-semibold text-2xl mb-2">{spell.name}</h4>
-      <p className="mb-4">(Casts * {castSpell.casts})</p>
+    <>
+      <div
+        onClick={() => setIsOpen(true)}
+        className='rounded shadow bg-gray-100 p-4 cursor-pointer'
+      >
+        <h4 className='font-semibold text-2xl'>{spell.name}</h4>
+        <div className='flex align-middle'>
+          <Dice moves={spell.moves} />
+          <span>{spell.range && `${spell.range} ft.`}</span>
+        </div>
+      </div>
 
-      {Object.entries(properties).map(([label, value], index) => (
-        <Property key={index} label={label} value={value}/>
-      ))}
-
-      <button className="mt-2 font-semibold bg-blue-600 text-white py-2 px-4 rounded" onClick={() => cast(spell.id)}>Cast spell</button>
-    </div>
+      <Modal
+        style={modalStyles}
+        closeTimeoutMS={500}
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+      >
+        <SpellModal
+          spell={spell}
+          closeModal={() => setIsOpen(false)}
+        />
+      </Modal>
+    </>
   );
 }
 

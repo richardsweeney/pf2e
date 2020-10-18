@@ -39,6 +39,11 @@
       "id": 15,
       "name": "Society",
       "modifier": "intelligence"
+    },
+    {
+      "id": 16,
+      "name": "Stealth",
+      "modifier": "dexterity"
     }
   ]
 }

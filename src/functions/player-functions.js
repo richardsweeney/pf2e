@@ -7,7 +7,7 @@ function getPlayer (id) {
     E: 4,
     M: 6,
     L: 8
-  }
+  };
 
   function getProficiencyBonus (modifier = null) {
     if (!modifier) {
@@ -25,6 +25,12 @@ function getPlayer (id) {
     const { data: spells } = require('../data/spells.json');
 
     return spells.filter(({ id }) => player.spells.includes(id));
+  }
+
+  function getSpellLevels () {
+    const levels = getSpells().map(({ level }) => level);
+
+    return Array.from(new Set(levels));
   }
 
   function getCantrips () {
@@ -48,7 +54,7 @@ function getPlayer (id) {
   }
 
   function calculateSkillPoints ({ id, modifier }) {
-    return player.abilityScores.modifiers[modifier] +  getProficiencyBonus(player.skills[id]);
+    return player.abilityScores.modifiers[modifier] + getProficiencyBonus(player.skills[id]);
   }
 
   function getPerception () {
@@ -85,6 +91,7 @@ function getPlayer (id) {
   return {
     ...player,
     spells: getSpells(),
+    spellLevels: getSpellLevels(),
     cantrips: getCantrips(),
     perception: getPerception(),
     HP: getHP(),
@@ -94,7 +101,7 @@ function getPlayer (id) {
     spellAttackRoll: getSpellAttackRoll(),
     spellDC: getSpellDC(),
     skills: getSkills()
-  }
+  };
 }
 
 export default getPlayer;
