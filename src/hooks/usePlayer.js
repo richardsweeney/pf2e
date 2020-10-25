@@ -1,14 +1,26 @@
 import { useContext } from 'react';
-import { store } from '../stores/PlayerContext';
+import { SET_PLAYER, store } from '../stores/PlayerContext';
+import getPlayer from '../functions/player-functions';
 
 function usePlayer () {
   const {
     state: {
       player
-    }
+    },
+    dispatch
   } = useContext(store);
 
-  return player;
+  function setPlayer (id) {
+    dispatch({
+      type: SET_PLAYER,
+      payload: getPlayer(id)
+    });
+  }
+
+  return {
+    player,
+    setPlayer
+  };
 }
 
 export default usePlayer;

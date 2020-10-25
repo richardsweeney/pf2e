@@ -41,24 +41,28 @@ function getPlayer (id) {
 
   function getSkills () {
     const { data: skills } = require('../data/skills.json');
-    const keys = Object.keys(player.skills).map(k => parseInt(k));
-    const filteredSkills = skills.filter(({ id }) => keys.includes(id));
 
-    return filteredSkills.map(({ name, id, modifier }) => {
+    return skills.map(({ name, modifier }) => {
+
+      const trained = player.skills[name];
+      const points = (trained)
+        ? `<strong>+${calculateSkillPoints(trained, modifier)}</strong> (${trained})` : 'Untrained';
+
       return {
         name,
-        id,
-        points: calculateSkillPoints({ id, modifier })
+        modifier,
+        trained: trained || '',
+        points
       };
     });
   }
 
-  function calculateSkillPoints ({ id, modifier }) {
-    return player.abilityScores.modifiers[modifier] + getProficiencyBonus(player.skills[id]);
+  function calculateSkillPoints (trained, modifier) {
+    return player.abilityScores.modifiers[modifier] + getProficiencyBonus(trained);
   }
 
   function getPerception () {
-    return player.abilityScores.modifiers.wisdom + getProficiencyBonus('T');
+    return player.abilityScores.modifiers.Wisdom + getProficiencyBonus('T');
   }
 
   function getClassDC () {
@@ -66,7 +70,7 @@ function getPlayer (id) {
   }
 
   function getArmourClass () {
-    return player.abilityScores.modifiers.dexterity + getProficiencyBonus('T') + 10;
+    return player.abilityScores.modifiers.Dexterity + getProficiencyBonus('T') + 10;
   }
 
   function getSpellAttackRoll () {
@@ -82,9 +86,9 @@ function getPlayer (id) {
     const { savingThrows } = player;
 
     return {
-      fortitude: modifiers.constitution + getProficiencyBonus(savingThrows.fortitude),
-      reflex: modifiers.dexterity + getProficiencyBonus(savingThrows.reflex),
-      will: modifiers.wisdom + getProficiencyBonus(savingThrows.will)
+      fortitude: modifiers.Constitution + getProficiencyBonus(savingThrows.fortitude),
+      reflex: modifiers.Dexterity + getProficiencyBonus(savingThrows.reflex),
+      will: modifiers.Wisdom + getProficiencyBonus(savingThrows.will)
     };
   }
 

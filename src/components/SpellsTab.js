@@ -3,7 +3,7 @@ import SpellGroup from './SpellGroup';
 import usePlayer from '../hooks/usePlayer';
 
 function SpellsTab () {
-  const player = usePlayer();
+  const { player } = usePlayer();
 
   return (
     <div className='p-2'>

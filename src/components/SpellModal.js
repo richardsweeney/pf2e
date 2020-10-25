@@ -2,10 +2,11 @@ import Property from './Property';
 import React, { useState } from 'react';
 import useSpells from '../hooks/useSpells';
 import Dice from './Dice';
+import Button from './Button';
 
 function SpellModal ({ spell, closeModal }) {
   const [hasCasted, setHasCasted] = useState(false);
-  const { castSpell } = useSpells();
+  const { castSpell, undoCast } = useSpells();
   const { getSpellTotals } = useSpells();
   const { numCasts, totalCasts } = getSpellTotals(spell.level);
 
@@ -18,6 +19,11 @@ function SpellModal ({ spell, closeModal }) {
     castSpell(spell.level);
   };
 
+  const undo = () => {
+    setHasCasted(false);
+    undoCast(spell.level);
+  }
+
   const properties = {
     'Targets': (spell.targets) ? spell.targets : 'n/a',
     'Prepared': (spell.prepared) ? 'Yes' : 'No'
@@ -25,14 +31,14 @@ function SpellModal ({ spell, closeModal }) {
 
   return (
     <>
-      <div className='flex justify-between align-text-top'>
-        <h4 className='font-semibold text-2xl mb-4'>
+      <div className='flex justify-between items-start mb-4'>
+        <h4 className='font-semibold text-2xl'>
           {spell.name} (Level {spell.level})
         </h4>
-        <button
+        <Button
           onClick={closeModal}
-        >close
-        </button>
+          text={'Close'}
+        />
       </div>
 
       <div className='flex align-middle mb-2 mt-1'>
@@ -44,19 +50,22 @@ function SpellModal ({ spell, closeModal }) {
         <Property key={index} label={label} value={value}/>
       ))}
 
-      <div className='flex justify-between align-middle mt-4 mb-4'>
-        <button
-          className='font-semibold bg-blue-600 text-white py-2 px-4 rounded'
+      <div className='flex justify-between align-middle mt-6 mb-6'>
+        <Button
           onClick={cast}
           disabled={isDisabled()}
-        >Cast spell
-        </button>
+          text="Cast spell"
+        />
         <p className='mb-4'>({totalCasts - numCasts} level {spell.level} casts remaining)</p>
       </div>
 
       {hasCasted ? (
-        <p className='mt-2 mb-4 font-semibold bg-gray-100 p-2 shadow rounded-r-md border-l-4 border-orange-500'>
-          You casted {spell.name} ✨ ✨
+        <p className='mt-2 mb-4 flex justify-between items-center font-semibold bg-gray-100 p-2 shadow rounded-r-md border-l-8 border-green-700'>
+          <span>You casted {spell.name} ✨ ✨</span>
+          <Button
+            onClick={undo}
+            text="Undo cast"
+          />
         </p>
       ) : null}
 

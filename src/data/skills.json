@@ -1,49 +1,68 @@
 {
   "data": [
     {
-      "id": 1,
       "name": "Acrobatics",
-      "modifier": "dexterity"
+      "modifier": "Dexterity"
     },
     {
-      "id": 2,
       "name": "Arcana",
-      "modifier": "intelligence"
+      "modifier": "Intelligence"
     },
     {
-      "id": 5,
+      "name": "Athletics",
+      "modifier": "Strength"
+    },
+    {
+      "name": "Crafting",
+      "modifier": "Intelligence"
+    },
+    {
       "name": "Deception",
-      "modifier": "charisma"
+      "modifier": "Charisma"
     },
     {
-      "id": 6,
       "name": "Diplomacy",
-      "modifier": "charisma"
+      "modifier": "Charisma"
     },
     {
-      "id": 8,
+      "name": "Intimidation",
+      "modifier": "Charisma"
+    },
+    {
       "name": "Lore",
-      "modifier": "intelligence"
+      "modifier": "Intelligence"
     },
     {
-      "id": 10,
       "name": "Medicine",
-      "modifier": "wisdom"
+      "modifier": "Wisdom"
     },
     {
-      "id": 13,
+      "name": "Nature",
+      "modifier": "Wisdom"
+    },
+    {
+      "name": "Occultism",
+      "modifier": "Intelligence"
+    },
+    {
       "name": "Performance",
-      "modifier": "charisma"
+      "modifier": "Charisma"
     },
     {
-      "id": 15,
+      "name": "Religion",
+      "modifier": "Wisdom"
+    },
+    {
       "name": "Society",
-      "modifier": "intelligence"
+      "modifier": "Intelligence"
     },
     {
-      "id": 16,
       "name": "Stealth",
-      "modifier": "dexterity"
+      "modifier": "Dexterity"
+    },
+    {
+      "name": "Survival",
+      "modifier": "Wisdom"
     }
   ]
 }

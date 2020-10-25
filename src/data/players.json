@@ -6,10 +6,10 @@
       "name": "Lorem Id",
       "class": "Sorcerer",
       "heritage": "Human, Half-elf",
-      "level": 4,
+      "level": 5,
       "HP": 6,
       "proficiencyBonus": 3,
-      "modifier": "charisma",
+      "modifier": "Charisma",
       "magicTradition": "Arcane",
       "speed": 25,
       "XP": 210,
@@ -19,20 +19,20 @@
       ],
       "abilityScores": {
         "modifiers": {
-          "strength": 0,
-          "dexterity": 1,
-          "constitution": 2,
-          "intelligence": 1,
-          "wisdom": 1,
-          "charisma": 4
+          "Strength": 0,
+          "Dexterity": 1,
+          "Constitution": 2,
+          "Intelligence": 1,
+          "Wisdom": 1,
+          "Charisma": 4
         },
         "scores": {
-          "strength": 10,
-          "dexterity": 12,
-          "constitution": 14,
-          "intelligence": 12,
-          "wisdom": 12,
-          "charisma": 18
+          "Strength": 10,
+          "Dexterity": 12,
+          "Constitution": 14,
+          "Intelligence": 12,
+          "Wisdom": 12,
+          "Charisma": 18
         }
       },
       "armourClass": {
@@ -59,14 +59,12 @@
         "2": 4
       },
       "skills": {
-        "2": "T",
-        "5": "T",
-        "6": "E",
-        "8": "T",
-        "10": "T",
-        "13": "T",
-        "15": "T",
-        "16": "T"
+        "Arcana": "T",
+        "Deception": "T",
+        "Diplomacy": "E",
+        "Medicine": "T",
+        "Performance": "T",
+        "Society": "T"
       }
     }
   ]
