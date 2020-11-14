@@ -3,82 +3,113 @@
     {
       "id": 1,
       "name": "Magic missile",
-      "range": 120,
+      "range": "120 ft",
       "level": 1,
       "moves": 1,
       "targets": 1,
-      "prepared": false,
+      "prepared": "no",
       "notes": "You send a dart of force streaking toward a creature that you can see. It automatically hits and deals 1d4+1 force damage. For each additional action you use when Casting the Spell, increase the number of missiles you shoot by one, to a maximum of three missiles for 3 actions. You choose the target for each missile individually. If you shoot more than one missile at the same target, combine the damage before applying bonuses or penalties to damage, resistances, weaknesses, and so forth."
     },
     {
       "id": 2,
       "name": "Gust of wind",
-      "range": 60,
+      "range": "60 ft",
       "level": 1,
       "moves": 2,
-      "targets": null,
-      "prepared": false,
+      "prepared": "no",
       "notes": "A violent wind issues forth from your palm, blowing from the point where you are when you cast the spell to the line's opposite end. The wind extinguishes small non-magical fires, disperses fog and mist, blows objects of light Bulk or less around, and pushes larger objects. Large or smaller creatures in the area must attempt a Fortitude save. Large or smaller creatures that later move into the gust must attempt the save on entering. Critical Success The creature is unaffected. Success The creature can't move against the wind. Failure The creature is knocked prone. If it was flying, it suffers the effects of critical failure instead. Critical Failure The creature is pushed 30 feet in the wind's direction, knocked prone, and takes 2d6 bludgeoning damage."
     },
     {
       "id": 3,
       "name": "Acid arrow",
-      "range": 120,
+      "range": "120 ft",
       "level": 2,
       "moves": 2,
       "targets": 1,
-      "prepared": false,
+      "prepared": "no",
       "notes": "You conjure an arrow of acid that continues corroding the target after it hits. Make a spell attack against the target. On a hit, you deal 3d8 acid damage plus 1d6 persistent acid damage. On a critical hit, double the initial damage, but not the persistent damage."
     },
     {
       "id": 4,
       "name": "Dispel Magic",
       "level": 2,
-      "range": 120,
+      "range": "120 ft",
       "moves": 2,
-      "targets": 1,
-      "prepared": false,
+      "targets": "1 spell effect or unattended magic item",
+      "prepared": "no",
       "notes": "You unravel the magic behind a spell or effect. Attempt a counteract check (https://2e.aonprd.com/Rules.aspx?ID=371) against the target. If you succeed against a spell effect, you counteract it. If you succeed against a magic item, the item becomes a mundane item of its type for 10 minutes. This doesn't change the item's non-magical properties. If the target is an artifact or similar item, you automatically fail."
     },
     {
       "id": 5,
-      "name": "Telekinetic Manuever",
-      "range": 60,
+      "name": "Telekinetic Maneuver",
+      "range": "60 ft",
       "level": 2,
       "moves": 2,
       "targets": 1,
-      "prepared": false,
+      "prepared": "no",
       "notes": "Disarm, shove or trip the target using a spell attack roll instead of an Athletic's check."
     },
     {
       "id": 6,
       "name": "True Strike",
-      "range": null,
       "level": 1,
       "moves": 1,
       "targets": 1,
-      "prepared": false,
+      "prepared": "no",
       "notes": "A glimpse into the future ensures your next blow strikes true. The next time you make an attack roll before the end of your turn, roll the attack twice and use the better result. The attack ignores circumstance penalties to the attack roll and any flat check required due to the target being concealed or hidden."
     },
     {
       "id": 7,
       "name": "Knock",
-      "range": 30,
+      "range": "30 ft",
       "level": 2,
       "moves": 2,
-      "targets": 1,
-      "prepared": false,
-      "notes": "You make the target easier to open. Knock grants a +4 status bonus to any creature that tries to open the target door, lock, or container with an Athletics or a Thievery check. You can attempt a Thievery check to open the target as part of casting knock, and you add your level even if you're untrained."
+      "targets": "1 door, lock, or container",
+      "prepared": "no",
+      "duration": "1 minute",
+      "notes": "You make the target easier to open. Knock grants a +4 status bonus to any creature that tries to open the target door, lock, or container with an Athletics or a Thievery check. You can attempt a Thievery check to open the target as part of casting knock, and you add your level even if you're untrained. Knock counteracts lock."
     },
     {
       "id": 8,
       "name": "Sleep",
+      "area": "5 foot burst",
       "range": 30,
       "level": 1,
       "moves": 2,
       "targets": 1,
-      "prepared": false,
-      "notes": "Saving Throw Will\nEach creature in the area becomes drowsy and might fall asleep. A creature that falls unconscious from this spell doesn’t fall prone or release what it’s holding. This spell doesn’t prevent creatures from waking up due to a successful Perception check, limiting its utility in combat. https://2e.aonprd.com/Spells.aspx?ID=288"
+      "prepared": "no",
+      "savingThrow": "will",
+      "notes": "Each creature in the area becomes drowsy and might fall asleep. A creature that falls unconscious from this spell doesn’t fall prone or release what it’s holding. This spell doesn’t prevent creatures from waking up due to a successful Perception check, limiting its utility in combat. Critical Success The creature is unaffected.\nSuccess The creature takes a –1 status penalty to Perception\nchecks for 1 round.\nFailure The creature falls unconscious. If it’s still unconscious\nafter 1 minute, it wakes up automatically.\nCritical Failure The creature falls unconscious. If it’s still\nunconscious after 1 hour, it wakes up automatically. https://2e.aonprd.com/Spells.aspx?ID=288"
+    },
+    {
+      "id": 9,
+      "name": "Fireball",
+      "range": 500,
+      "area": "20 foot burst",
+      "level": 3,
+      "moves": 2,
+      "prepared": "no",
+      "notes": "A roaring blast of fire appears at a spot you designate, dealing 6d6 fire damage."
+    },
+    {
+      "id": 10,
+      "name": "Invisibility Sphere",
+      "area": "10 foot emanation",
+      "level": 3,
+      "moves": 2,
+      "targets": "you and any number of creatures in range",
+      "duration": "10 minutes",
+      "prepared": "no",
+      "notes": "Traditions arcane, occult\nCast [two-actions] material, somatic\nArea 10-foot emanation; Targets you and any number of\ncreatures in range Duration 10 minutes"
+    },
+    {
+      "id": 11,
+      "name": "Lightning Bolt",
+      "moves": 2,
+      "level": 3,
+      "area": "120-foot line",
+      "notes": "A bolt of lightning strikes outward from your hand, dealing 4d12 electricity damage.",
+      "savingThrow": "reflex"
     }
   ]
 }

@@ -2,11 +2,11 @@
   "data": [
     {
       "id": 1,
-      "image": "https://cdnb.artstation.com/p/assets/images/images/018/947/663/large/jake-siano-elrisfinal.jpg?1561380156",
+      "image": "https://lavendla.imgix.net/user/270/profile_image/richard.jpg?format=auto&w=100&h=100&fit=facearea&facepad=10",
       "name": "Lorem Id",
       "class": "Sorcerer",
       "heritage": "Human, Half-elf",
-      "level": 5,
+      "level": 4,
       "HP": 6,
       "proficiencyBonus": 3,
       "modifier": "Charisma",

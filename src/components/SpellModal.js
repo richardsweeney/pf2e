@@ -9,6 +9,11 @@ function SpellModal ({ spell, closeModal }) {
   const { castSpell, undoCast } = useSpells();
   const { getSpellTotals } = useSpells();
   const { numCasts, totalCasts } = getSpellTotals(spell.level);
+  const keys = ['area', 'targets', 'duration', 'prepared', 'range'];
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   function isDisabled () {
     return numCasts === totalCasts;
@@ -24,11 +29,6 @@ function SpellModal ({ spell, closeModal }) {
     undoCast(spell.level);
   }
 
-  const properties = {
-    'Targets': (spell.targets) ? spell.targets : 'n/a',
-    'Prepared': (spell.prepared) ? 'Yes' : 'No'
-  };
-
   return (
     <>
       <div className='flex justify-between items-start mb-4'>
@@ -41,14 +41,19 @@ function SpellModal ({ spell, closeModal }) {
         />
       </div>
 
-      <div className='flex align-middle mb-2 mt-1'>
+      <div className='flex align-middle mb-4 mt-1'>
         <Dice moves={spell.moves}/>
-        <span className='pl-2'>{spell.range && `${spell.range} ft.`}</span>
       </div>
 
-      {Object.entries(properties).map(([label, value], index) => (
-        <Property key={index} label={label} value={value}/>
-      ))}
+      {keys.map((key, i) => {
+        if (spell[key]) {
+          return (
+            <Property key={i} label={capitalizeFirstLetter(key)} value={spell[key]} />
+          );
+        }
+
+        return null;
+      })}
 
       <div className='flex justify-between align-middle mt-6 mb-6'>
         <Button
