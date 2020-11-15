@@ -59,6 +59,7 @@
         "2": 4,
         "3": 3
       },
+      "cantripCasts": 5,
       "skills": {
         "Arcana": "T",
         "Deception": "T",

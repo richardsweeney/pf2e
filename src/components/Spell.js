@@ -3,7 +3,7 @@ import Modal from './Modal';
 import SpellModal from './SpellModal';
 import Dice from './Dice';
 
-function Spell ({ spell }) {
+function Spell ({ spell, isCantrip = false }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -25,6 +25,7 @@ function Spell ({ spell }) {
       >
         <SpellModal
           spell={spell}
+          isCantrip={isCantrip}
           closeModal={() => setIsOpen(false)}
         />
       </Modal>

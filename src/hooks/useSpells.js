@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import { CAST_SPELL, store, UNDO_CAST } from '../stores/PlayerContext';
+import { CAST_CANTRIP, CAST_SPELL, store, UNDO_CAST, UNDO_CAST_CANTRIP } from '../stores/PlayerContext';
 
 function useSpells () {
   const {
     state: {
       player,
-      spellCasts
+      spellCasts,
+      cantripCasts
     },
     dispatch
   } = useContext(store);
@@ -23,6 +24,18 @@ function useSpells () {
       payload: level
     });
   }
+
+  const castCantrip = () => {
+    dispatch({
+      type: CAST_CANTRIP
+    })
+  };
+
+  const undoCastCantrip = () => {
+    dispatch({
+      type: UNDO_CAST_CANTRIP
+    })
+  };
 
   function getSpellsForLevel(level) {
     return player.spells
@@ -46,10 +59,20 @@ function useSpells () {
     };
   }
 
+  function getCantripTotals () {
+    return {
+      totalCasts: player.cantripCasts,
+      numCasts: cantripCasts
+    }
+  }
+
   return {
     castSpell,
     undoCast,
+    castCantrip,
+    undoCastCantrip,
     getSpellTotals,
+    getCantripTotals,
     getSpellsForLevel
   }
 }

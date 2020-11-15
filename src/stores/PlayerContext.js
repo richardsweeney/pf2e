@@ -2,11 +2,14 @@ import React, { createContext, useReducer } from 'react';
 export const SET_PLAYER = 'SET_PLAYER';
 export const CAST_SPELL = 'CAST_SPELL';
 export const UNDO_CAST = 'UNDO_CAST';
+export const CAST_CANTRIP = 'CAST_CANTRIP';
+export const UNDO_CAST_CANTRIP = 'UNDO_CAST_CANTRIP';
 export const SET_HP = 'SET_HP';
 
 const initialState = {
   player: null,
   HP: 0,
+  cantripCasts: 0,
   spellCasts: {
     1: 0,
     2: 0,
@@ -21,7 +24,7 @@ const { Provider } = store;
 let spellCasts = null;
 
 const StateProvider = ({ children }) => {
-  const [state, dispatch] = useReducer((state, { type, payload }) => {
+  const [state, dispatch] = useReducer((state, { type, payload = null }) => {
     switch (type) {
       case SET_PLAYER:
         return {
@@ -46,6 +49,18 @@ const StateProvider = ({ children }) => {
         return {
           ...state,
           spellCasts
+        }
+
+      case CAST_CANTRIP:
+        return {
+          ...state,
+          cantripCasts: state.cantripCasts + 1
+        }
+
+      case UNDO_CAST_CANTRIP:
+        return {
+          ...state,
+          cantripCasts: state.cantripCasts - 1
         }
 
       case SET_HP:

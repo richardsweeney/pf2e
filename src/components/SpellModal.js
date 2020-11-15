@@ -4,11 +4,10 @@ import useSpells from '../hooks/useSpells';
 import Dice from './Dice';
 import Button from './Button';
 
-function SpellModal ({ spell, closeModal }) {
+function SpellModal ({ spell, closeModal, isCantrip = false }) {
   const [hasCasted, setHasCasted] = useState(false);
-  const { castSpell, undoCast } = useSpells();
-  const { getSpellTotals } = useSpells();
-  const { numCasts, totalCasts } = getSpellTotals(spell.level);
+  const { castSpell, undoCast, castCantrip, undoCastCantrip, getSpellTotals, getCantripTotals } = useSpells();
+  const { numCasts, totalCasts } = (isCantrip) ? getCantripTotals() : getSpellTotals(spell.level);
   const keys = ['area', 'targets', 'duration', 'prepared', 'range'];
 
   function capitalizeFirstLetter(string) {
@@ -20,13 +19,23 @@ function SpellModal ({ spell, closeModal }) {
   }
 
   const cast = () => {
+    if (isCantrip) {
+      castCantrip();
+    } else {
+      castSpell(spell.level);
+    }
+
     setHasCasted(true);
-    castSpell(spell.level);
   };
 
   const undo = () => {
+    if (isCantrip) {
+      undoCastCantrip();
+    } else {
+      undoCast(spell.level);
+    }
+
     setHasCasted(false);
-    undoCast(spell.level);
   }
 
   return (
@@ -61,12 +70,16 @@ function SpellModal ({ spell, closeModal }) {
           disabled={isDisabled()}
           text="Cast spell"
         />
-        <p className='mb-4'>({totalCasts - numCasts} level {spell.level} casts remaining)</p>
+        <p className='mb-4'>{isCantrip ? (
+            <>({totalCasts - numCasts} casts remaining)</>
+        ) : (
+          <>({totalCasts - numCasts} level {spell.level} casts remaining)</>
+        )}</p>
       </div>
 
       {hasCasted ? (
         <p className='mt-2 mb-4 flex justify-between items-center font-semibold bg-gray-100 p-2 shadow rounded-r-md border-l-8 border-green-700'>
-          <span>You casted {spell.name} ✨ ✨</span>
+          <span>You casted {spell.name} ✨✨</span>
           <Button
             onClick={undo}
             text="Undo cast"
