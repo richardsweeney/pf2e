@@ -6,7 +6,7 @@
       "name": "Lorem Id",
       "class": "Sorcerer",
       "heritage": "Human, Half-elf",
-      "level": 4,
+      "level": 5,
       "HP": 6,
       "proficiencyBonus": 3,
       "modifier": "Charisma",
@@ -28,11 +28,11 @@
         },
         "scores": {
           "Strength": 10,
-          "Dexterity": 12,
-          "Constitution": 14,
-          "Intelligence": 12,
+          "Dexterity": 14,
+          "Constitution": 16,
+          "Intelligence": 14,
           "Wisdom": 12,
-          "Charisma": 18
+          "Charisma": 19
         }
       },
       "armourClass": {
@@ -42,21 +42,22 @@
         "heavy": null
       },
       "savingThrows": {
-        "fortitude": "T",
+        "fortitude": "E",
         "reflex": "T",
         "will": "E"
       },
       "spellAttackRoll": "T",
       "spellDC": "T",
       "cantrips": [
-        1, 2, 3
+        1, 2, 3, 4, 5
       ],
       "spells": [
-        1, 2, 3, 4, 5, 6, 7, 8
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
       ],
       "spellCasts": {
         "1": 4,
-        "2": 4
+        "2": 4,
+        "3": 3
       },
       "skills": {
         "Arcana": "T",

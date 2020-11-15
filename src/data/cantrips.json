@@ -3,32 +3,47 @@
     {
       "id": 1,
       "name": "Detect magic",
-      "range": 30,
+      "range": "30 ft",
       "level": 1,
       "moves": 2,
-      "targets": null,
-      "prepared": false,
       "notes": "You send out a pulse that registers the presence of magic. You receive no information beyond the presence or absence of magic. You can choose to ignore magic you're fully aware of, such as the magic items and ongoing spells of you and your allies. You detect illusion magic only if that magic's effect has a lower level than the level of your detect magic spell. However, items that have an illusion aura but aren't deceptive in appearance (such as an invisibility potion) typically are detected normally."
     },
     {
       "id": 2,
-      "name": "Shield",
-      "range": null,
-      "level": 1,
+      "name": "Shield (Heightened)",
+      "level": 3,
       "moves": 1,
-      "targets": null,
-      "prepared": false,
-      "notes": "You raise a magical shield of force. This counts as using the Raise a Shield action, giving you a +1 circumstance bonus to AC until the start of your next turn, but it doesn't require a hand to use. While the spell is in effect, you can use the Shield Block reaction with your magic shield. The shield has Hardness 5. After you use Shield Block, the spell ends and you can't cast it again for 10 minutes. Unlike a normal Shield Block, you can use the spell's reaction against the magic missile spell."
+      "notes": "You raise a magical shield of force. This counts as using the Raise a Shield action, giving you a +1 circumstance bonus to AC until the start of your next turn, but it doesn't require a hand to use. While the spell is in effect, you can use the Shield Block reaction with your magic shield. The shield has Hardness 5. After you use Shield Block, the spell ends and you can't cast it again for 10 minutes. Unlike a normal Shield Block, you can use the spell's reaction against the magic missile spell.",
+      "heightened": "Heightened (3rd) The shield has Hardness 10.\nHeightened (5th) The shield has Hardness 15.\nHeightened (7th) The shield has Hardness 20.\nHeightened (9th) The shield has Hardness 25."
     },
     {
       "id": 3,
       "name": "Light",
-      "range": 30,
+      "range": "30 ft",
       "level": 1,
       "moves": 2,
       "targets": 1,
-      "prepared": false,
       "notes": "The object glows, casting bright light in a 20-foot radius (and dim light for the next 20 feet) like a torch. If you cast this spell again on a second object, the light spell on the first object ends."
+    },
+    {
+      "id": 4,
+      "name": "Ray of frost (Heightened)",
+      "range": "120 ft",
+      "level": 2,
+      "moves": 2,
+      "targets": 1,
+      "notes": "You blast an icy ray. Make a spell attack roll. The ray deals cold damage equal to 1d4 + your spellcasting ability modifier. Critical Success The target takes double damage and takes a 10-foot status penalty to its Speeds for 1 round. Success The target takes normal damage.",
+      "heightened": "Heightened (+1) The damage increases by 1d4."
+    },
+    {
+      "id": 5,
+      "name": "Electric Arc (heightened)",
+      "range": "30 ft",
+      "level": 2,
+      "moves": 2,
+      "targets": "1 or 2",
+      "notes": "An arc of lightning leaps from one target to another. You deal electricity damage equal to 1d4 plus your spellcasting ability modifier.",
+      "heightened": "Heightened (+1) The damage increases by 1d4."
     }
   ]
 }

@@ -15,7 +15,7 @@ function Spell ({ spell }) {
         <h4 className='font-semibold text-2xl pb-1'>{spell.name}</h4>
         <div className='flex align-middle'>
           <Dice moves={spell.moves} />
-          <span>{spell.range && `${spell.range} ft.`}</span>
+          <span>{spell.range || ''}</span>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PlayerSelector from './PlayerSelector';
 import SpellsTab from './SpellsTab';
+import CantripsTab from './CantripsTab';
 import HP from './HP';
 import usePlayer from '../hooks/usePlayer';
 
@@ -49,10 +50,11 @@ function Player () {
           <TabList>
             <Tab>General</Tab>
             <Tab>Spells</Tab>
+            <Tab>Cantrips</Tab>
             <Tab>Skills</Tab>
           </TabList>
           <TabPanel>
-            <div className='p-2'>
+            <div>
               <h3 className='font-semibold text-3xl mb-4'>General</h3>
 
               <div className='md:flex'>
@@ -76,7 +78,7 @@ function Player () {
                     <Property key={index} label={label} value={value}/>
                   ))}
                 </div>
-                <div className='md:w-1/2 mb-8'>
+                <div className='md:w-1/2'>
                   <h4 className='font-semibold text-2xl mb-2'>Ability Scores</h4>
                   {Object.entries(abilityScores.scores).map(([label, value], index) => (
                     <Property key={index} label={label} value={value}/>
@@ -87,6 +89,9 @@ function Player () {
           </TabPanel>
           <TabPanel>
             <SpellsTab/>
+          </TabPanel>
+          <TabPanel>
+            <CantripsTab/>
           </TabPanel>
           <TabPanel>
             <div className='p-2'>
