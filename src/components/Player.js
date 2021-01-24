@@ -18,21 +18,21 @@ function Player () {
 
   const properties = {
     Level: player.level,
-    HP: player.HP,
+    'Max HP': player.HP,
     Class: player.class,
     'Class DC': player.DC,
     'Spell DC': player.spellDC,
-    'Spell Attack Roll': player.spellAttackRoll,
+    'Spell Attack Roll': `+${player.spellAttackRoll}`,
     'Armor Class': player.AC,
-    Perception: player.perception
+    Perception: `+${player.perception}`
   };
 
   const { scores, modifiers } = player.abilityScores;
   const abilityScores = { scores, modifiers };
   const savingThrows = {
-    'Fortitude Save': player.savingThrows.fortitude,
-    'Reflex Save': player.savingThrows.reflex,
-    'Will Save': player.savingThrows.will
+    'Fortitude Save': `+${player.savingThrows.fortitude}`,
+    'Reflex Save': `+${player.savingThrows.reflex}`,
+    'Will Save': `+${player.savingThrows.will}`
   };
 
   return (
@@ -67,7 +67,7 @@ function Player () {
                 <div className='md:w-1/2 mb-8'>
                   <h4 className='font-semibold text-2xl mb-2'>Ability Modifiers</h4>
                   {Object.entries(abilityScores.modifiers).map(([label, value], index) => (
-                    <Property key={index} label={label} value={value}/>
+                    <Property key={index} label={label} value={`+${value}`}/>
                   ))}
                 </div>
               </div>

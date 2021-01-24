@@ -27,7 +27,8 @@
       "moves": 2,
       "targets": 1,
       "prepared": "no",
-      "notes": "You conjure an arrow of acid that continues corroding the target after it hits. Make a spell attack against the target. On a hit, you deal 3d8 acid damage plus 1d6 persistent acid damage. On a critical hit, double the initial damage, but not the persistent damage."
+      "notes": "You conjure an arrow of acid that continues corroding the target after it hits. Make a spell attack against the target. On a hit, you deal 3d8 acid damage plus 1d6 persistent acid damage. On a critical hit, double the initial damage, but not the persistent damage.",
+      "heightened": "Heightened (+2) The initial damage increases by 2d8, and the persistent acid damage increases by 1d6."
     },
     {
       "id": 4,
@@ -73,7 +74,7 @@
       "id": 8,
       "name": "Sleep",
       "area": "5 foot burst",
-      "range": 30,
+      "range": "30 ft",
       "level": 1,
       "moves": 2,
       "targets": 1,
@@ -84,12 +85,13 @@
     {
       "id": 9,
       "name": "Fireball",
-      "range": 500,
+      "range": "500 ft",
       "area": "20 foot burst",
       "level": 3,
       "moves": 2,
       "prepared": "no",
-      "notes": "A roaring blast of fire appears at a spot you designate, dealing 6d6 fire damage."
+      "notes": "A roaring blast of fire appears at a spot you designate, dealing 6d6 fire damage.",
+      "savingThrow": "Basic Reflex"
     },
     {
       "id": 10,
